@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/masatoshi.shimada/git/oss/embulk-output-jubatus_nearest_neighbor/src/main/scala/org/embulk/output/jubatus_nearest_neighbor/jubatus/Jubatus.scala:11:43: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : us.jubat.common.type.TBool[0m
+[0m[[0m[31merror[0m] [0m[0m required: us.jubat.common.type.TType[Boolean][0m
+[0m[[0m[31merror[0m] [0m[0m    client.call[Boolean]("set_row", TBool.instance, Array[AnyRef](id, row))[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

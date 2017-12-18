@@ -12,6 +12,13 @@ trait PluginTask extends Task {
   @ConfigDefault("9199")
   def getPort: Int
 
+  @Config("name")
+  def getName: String
+
+  @Config("timeout")
+  @ConfigDefault("1000")
+  def getTimeOut: Int
+
   @Config("key")
   def getKeyName: String
 
