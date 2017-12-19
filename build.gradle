@@ -28,6 +28,7 @@ dependencies {
     compile "org.scala-lang:scala-library:2.12.4"
     compile "org.embulk:embulk-core:0.8.39"
     compile group: 'us.jubat', name: 'jubatus', version: '1.0.+'
+    testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.1'
     provided "org.embulk:embulk-core:0.8.39"
     testCompile "junit:junit:4.+"
 }

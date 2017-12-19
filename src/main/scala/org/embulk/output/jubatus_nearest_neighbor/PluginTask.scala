@@ -1,8 +1,9 @@
 package org.embulk.output.jubatus_nearest_neighbor
 
 import org.embulk.config.{Config, ConfigDefault, Task}
+import org.embulk.spi.time.TimestampFormatter
 
-trait PluginTask extends Task {
+trait PluginTask extends Task with TimestampFormatter.Task {
 
   @Config("host")
   @ConfigDefault("\"127.0.0.1\"")
@@ -19,26 +20,7 @@ trait PluginTask extends Task {
   @ConfigDefault("1000")
   def getTimeOut: Int
 
-  @Config("key")
-  def getKeyName: String
+  @Config("key_column_name")
+  def getKeyColumnName: String
 
-  @Config("value_name")
-  def getValueName: String
-
-  @Config("value_type")
-  def getValueType: String
-
-}
-
-sealed trait ValueType
-
-case object StringType extends ValueType
-case object NumberType extends ValueType
-
-object PluginTask {
-  def convertValueType(v: String): ValueType = v.toLowerCase match {
-    case "string" => StringType
-    case "number" => NumberType
-    case _        => sys.error("could not support type.")
-  }
 }
